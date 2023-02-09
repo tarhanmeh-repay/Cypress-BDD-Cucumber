@@ -1,26 +1,33 @@
-Feature: Login page
+@regression
+Feature: WebdriverUniversity Contact Us Page
+    @valid
+    Scenario: Contact us form submission
+        Given I access the WebdriverUniversity Login Portal Page
+        When I click on the contact us button
+        And I type a first name
+        And I type a last name
+        And I type an eamil adress
+        And I type a comment
+        And I click on the submit button
+        Then I should be presented with the following message validation succeeded
+    # @invalid
+    # Scenario: Login using invalid credentials
+    #     Given I access the WebdriverUniversity Login Portal Page
+    #     When I enter a username webdriver
+    #     And I enter a password webdriver333
+    #     And I click on the login button
+    #     Then I should be presented with the following message validation failed
 
-    Feature Login page will work depending on the user credentials.
+    # @smoke
+    # Scenario Outline: Test Login via WebdriverUniversity Login Portal
+    #     Given I access the WebdriverUniversity Login Portal Page
+    #     When I enter a username <username>
+    #     And I enter a password <password>
+    #     And I click on the login button
+    #     Then I should be presented with the following message <message>
 
-    Background:
-        Given A web browser is at the saucelabs login page
-    Scenario: Success Login
-        When A user enters the username "standard_user", the password "secret_sauce", and clicks on the login button
-        Then the url will contains the inventory subdirectory
-    Scenario: Blocked Login
-        When A user enters the username "locked_out_user", the password "secret_sauce", and clicks on the login button
-        Then The error message "Epic sadface: Sorry, this user has been locked out." is displayed
-    Scenario: Incorrect Username Login
-        When A user provides incorrect credentials, and clicks on the login button
-            | username | password     |
-
-            | testName | secret_sauce |
-
-            | testName123 | secret_sauce123 |
-        And A user clicks on the login button
-        Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
-    Scenario: Incorrect Password Login
-        When A user provides incorrect credentials, and clicks on the login button
-            | username      | password     |
-            | standard_user | testPassword |
-        Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
+    #     Examples:
+    #         | username  | password     | message              |
+    #         | webdriver | webdriver123 | validation succeeded |
+    #         | webdriver | webdriver333 | validation failed    |
+    #         | repay     | password333  | validation failed    |
