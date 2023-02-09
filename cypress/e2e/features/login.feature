@@ -13,7 +13,12 @@ Feature: Login page
     Scenario: Incorrect Username Login
         When A user provides incorrect credentials, and clicks on the login button
             | username | password     |
+<<<<<<< HEAD
             | testName | secret_sauce |
+=======
+            | testName123 | secret_sauce123 |
+        And A user clicks on the login button
+>>>>>>> c334d53 (New changes)
         Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
     Scenario: Incorrect Password Login
         When A user provides incorrect credentials, and clicks on the login button

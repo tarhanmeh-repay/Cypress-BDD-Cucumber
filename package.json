@@ -15,14 +15,27 @@
   "keywords": [
     "cypress"
   ],
-  "author": "cucumber",
+  "author": "Mehmet Tarhan",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@shelex/cypress-allure-plugin": "^2.34.0",
     "cypress": "^12.0.2",
     "esbuild": "^0.16.4",
     "multiple-cucumber-html-reporter": "^3.0.1"
+=======
+    "@badeball/cypress-cucumber-preprocessor": "^11.5.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "cypress": "^10.11.0",
+    "esbuild": "^0.14.48",
+    "multiple-cucumber-html-reporter": "^1.21.4",
+    "ts-loader": "^9.4.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+>>>>>>> c334d53 (New changes)
   }
 }
